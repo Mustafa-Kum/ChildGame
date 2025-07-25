@@ -1,0 +1,85 @@
+﻿/* Tüm sayfa sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* Oyun sarmalayıcılarının konumu */
+.game-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Başlangıçta her sarmalayıcı tam ekran; 
+       transition ile animate edeceğiz. */
+    transition: transform 0.8s ease;
+}
+
+/* Oyun 2, 3, 4, 5, 6, 7, 8, 9 ve 10, sayfanın "sağında bekliyor" */
+#gameContainer2, #gameContainer3, #gameContainer4, #gameContainer5, #gameContainer6, #gameContainer7, #gameContainer8, #gameContainer9, #gameContainer10 {
+    transform: translateX(100%);
+    transition: transform 0.8s ease; /* geçiş süresi */
+}
+
+/* Ekrana gelsin diye: */
+#gameContainer2.slide-in, #gameContainer3.slide-in, #gameContainer4.slide-in, #gameContainer5.slide-in, #gameContainer6.slide-in, #gameContainer7.slide-in, #gameContainer8.slide-in, #gameContainer9.slide-in, #gameContainer10.slide-in {
+    transform: translateX(0);
+}
+
+/* Soldan kayarak çıkma animasyonu */
+.slide-out-left {
+    transform: translateX(-100%);
+}
+
+/* Sola kaymış alan yerine tam ekrana gelme */
+.slide-in {
+    transform: translateX(0);
+}
+
+/* Canvas örnek stili */
+#gameCanvas1, #gameCanvas2, #gameCanvas3, #gameCanvas4, #gameCanvas5, #gameCanvas6, #gameCanvas7, #gameCanvas8, #gameCanvas9, #gameCanvas10 {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+/* Gif Container örnek stili */
+#gifContainer1, #gifContainer2, #gifContainer3, #gifContainer4, #gifContainer5, #gifContainer6, #gifContainer7, #gifContainer8, #gifContainer9, #gifContainer10 {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    width: 20vw;
+    height: 20vw;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#idleGif1, #animatedGif1,
+#idleGif2, #animatedGif2,
+#idleGif3, #animatedGif3,
+#idleGif4, #animatedGif4,
+#idleGif5, #animatedGif5,
+#idleGif6, #animatedGif6,
+#idleGif7, #animatedGif7,
+#idleGif8, #animatedGif8,
+#idleGif9, #animatedGif9,
+#idleGif10, #animatedGif10 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
